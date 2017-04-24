@@ -1,0 +1,45 @@
+#include "StdAfx.h"
+#include "StudentRecord.h"
+
+StudentRecord::StudentRecord(void) : Record()
+{
+}
+
+StudentRecord::~StudentRecord(void)
+{
+}
+
+std::string StudentRecord::GetFirstName() const
+{
+	return s_FirstName;
+}
+
+std::string StudentRecord::GetSurname() const
+{
+	return s_Surname;
+}
+
+int StudentRecord::GetScore() const
+{
+	return i_Score;
+}
+
+void StudentRecord::SetFirstName(const std::string & _sName)
+{
+	s_FirstName = _sName;
+}
+
+void StudentRecord::SetSurname(const std::string & _sName)
+{
+	s_Surname = _sName;
+}
+
+void StudentRecord::SetScore(int _iScore)
+{
+	i_Score = _iScore;
+}
+
+void StudentRecord::Print()
+{
+	DEBUG_LOG << "FirstName=" << s_FirstName << "|Surname=" << s_Surname << "|Score=" << i_Score;
+}
