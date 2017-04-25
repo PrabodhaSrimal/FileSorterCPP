@@ -1,8 +1,7 @@
 version: 1.0.{build}
 image: Visual Studio 2013
-build:
-  project: grade-scores.sln
-  verbosity: detailed
+build_script:
+- ps: '"C:\Windows\Microsoft.NET\Framework\v3.5\MSBuild.exe" "C:\projects\filesortercpp\grade-scores.sln" /verbosity:detailed /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"'
 deploy: off
 notifications:
 - provider: Email
