@@ -5,4 +5,4 @@
 C++ File Sorter Console App
 
 
-![Design UML](Design-UML.svg)
+![Design UML](https://github.com/prabodha007/FileSorterCPP/blob/master/Design-UML.jpg)
