@@ -1,6 +1,11 @@
 #pragma once
 #include "record.h"
+#include <string>
+#include <sstream>
 
+/**
+ * Representation of StudentRecord
+ */
 class StudentRecord : public Record
 {
 public:
@@ -15,7 +20,7 @@ public:
 	std::string GetSurname() const;
 	int GetScore() const;
 
-	void Print();
+	void Print(std::stringstream & _ssBuf);
 
 private:
 	std::string s_FirstName;

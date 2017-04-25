@@ -15,8 +15,10 @@ std::string StudentRecordCsvConverter::Convert(Record * _pRecord)
 	StudentRecord * pStudentRecord = dynamic_cast<StudentRecord*>(_pRecord);
 	if(!pStudentRecord)
 	{
-		DEBUG_LOG << "Record to StudentRecord convert error";
-		return "Convert ERROR!!!";
+		std::stringstream ss;
+		ss << "Convert ERROR: Record is not StudentRecord";
+		DEBUG_LOG << ss.str();
+		throw(ss.str().c_str());
 	}
 
 	std::stringstream ssOut;

@@ -12,6 +12,8 @@ RecordSetWriter::RecordSetWriter(OutputWriter * _pOutputWriter) :
 
 RecordSetWriter::~RecordSetWriter(void)
 {
+	if(p_OutputWriter)
+		delete p_OutputWriter;
 }
 
 void RecordSetWriter::Write(RecordSet * _pRecordSet, RecordConverter * _pConverter)

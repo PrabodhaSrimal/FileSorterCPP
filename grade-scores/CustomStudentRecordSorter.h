@@ -2,6 +2,15 @@
 #include "recordsorter.h"
 #include <string>
 
+/**
+ * Custom sort behavior implementation for StudentRecord s
+ * 
+ * - Orders the names by their score. 
+ * - If scores are the same, order by their last name followed by first name
+ * - Sorting score should be descending order
+ * - Sorting names should be ascending order
+ * - Text ordering should be case-insensitive
+ */
 class CustomStudentRecordSorter : public RecordSorter
 {
 public:

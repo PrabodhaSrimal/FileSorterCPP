@@ -1,6 +1,10 @@
 #pragma once
 #include "inputfilereader.h"
 
+/**
+ * Read given CSV file and process
+ * Callback for each processing event
+ */
 class CSVInputFileReader : public InputFileReader
 {
 public:

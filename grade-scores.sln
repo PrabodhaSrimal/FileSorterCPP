@@ -3,6 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "grade-scores", "grade-scores\grade-scores.vcproj", "{7A3BCA10-CC78-4855-9507-090227119436}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "grade-scores-test", "grade-scores-test\grade-scores-test.vcproj", "{1281B994-20FE-4147-9170-4B81136D0748}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7A3BCA10-CC78-4855-9507-090227119436} = {7A3BCA10-CC78-4855-9507-090227119436}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{519D5E60-7BFE-4C76-BED7-B7B6113ED1A4}"
+	ProjectSection(SolutionItems) = preProject
+		LocalTestRun.testrunconfig = LocalTestRun.testrunconfig
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -13,6 +23,10 @@ Global
 		{7A3BCA10-CC78-4855-9507-090227119436}.Debug|Win32.Build.0 = Debug|Win32
 		{7A3BCA10-CC78-4855-9507-090227119436}.Release|Win32.ActiveCfg = Release|Win32
 		{7A3BCA10-CC78-4855-9507-090227119436}.Release|Win32.Build.0 = Release|Win32
+		{1281B994-20FE-4147-9170-4B81136D0748}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1281B994-20FE-4147-9170-4B81136D0748}.Debug|Win32.Build.0 = Debug|Win32
+		{1281B994-20FE-4147-9170-4B81136D0748}.Release|Win32.ActiveCfg = Release|Win32
+		{1281B994-20FE-4147-9170-4B81136D0748}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

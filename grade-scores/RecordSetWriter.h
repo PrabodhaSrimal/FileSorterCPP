@@ -4,6 +4,10 @@ class RecordSet;
 class RecordConverter; 
 class OutputWriter;
 
+/**
+ * Write given RecordSet into destination using given OutputWriter 
+ * Records should first convert into string with given RecordConverter
+ */
 class RecordSetWriter
 {
 public:

@@ -1,5 +1,6 @@
 #include "StdAfx.h"
 #include "StudentRecord.h"
+#include <sstream>
 
 StudentRecord::StudentRecord(void) : Record()
 {
@@ -39,7 +40,7 @@ void StudentRecord::SetScore(int _iScore)
 	i_Score = _iScore;
 }
 
-void StudentRecord::Print()
+void StudentRecord::Print(std::stringstream & _ssBuf)
 {
-	DEBUG_LOG << "FirstName=" << s_FirstName << "|Surname=" << s_Surname << "|Score=" << i_Score;
+	_ssBuf << "FirstName=" << s_FirstName << "|Surname=" << s_Surname << "|Score=" << i_Score;
 }

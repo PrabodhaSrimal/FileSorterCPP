@@ -1,12 +1,15 @@
 #pragma once
 
-#include <string>
+#include <sstream>
 
+/**
+ * Interface for Record data 
+ */
 class Record
 {
 public:
 	Record() {}
 	virtual ~Record() {}
 
-	virtual void Print() = 0;
+	virtual void Print(std::stringstream & _ssBuf) = 0;
 };

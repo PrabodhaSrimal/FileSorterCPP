@@ -1,9 +1,13 @@
 #pragma once
 
 #include <vector>
+#include <sstream>
 
 class Record;
 
+/**
+ * Collection of Records 
+ */
 class RecordSet
 {
 public:
@@ -16,8 +20,8 @@ public:
 	Records::iterator End();
 
 	void AddRecord(Record* _pRecord);
-	void Print();
+	void Print(std::stringstream & _ssBuf);
 
 private:
-	Records lst_Records;
+	Records vec_Records;
 };

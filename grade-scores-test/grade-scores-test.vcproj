@@ -2,11 +2,12 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="9.00"
-	Name="grade-scores"
-	ProjectGUID="{7A3BCA10-CC78-4855-9507-090227119436}"
-	RootNamespace="gradescores"
-	Keyword="Win32Proj"
-	TargetFrameworkVersion="196613"
+	Name="grade-scores-test"
+	ProjectTypes="{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}"
+	ProjectGUID="{1281B994-20FE-4147-9170-4B81136D0748}"
+	RootNamespace="gradescorestest"
+	Keyword="ManagedCProj"
+	TargetFrameworkVersion="0"
 	>
 	<Platforms>
 		<Platform
@@ -20,8 +21,9 @@
 			Name="Debug|Win32"
 			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
 			IntermediateDirectory="$(ConfigurationName)"
-			ConfigurationType="1"
+			ConfigurationType="2"
 			CharacterSet="1"
+			ManagedExtensions="1"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -41,13 +43,12 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				PreprocessorDefinitions="WIN32;_DEBUG;_CONSOLE"
-				MinimalRebuild="true"
-				BasicRuntimeChecks="3"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)grade-scores&quot;"
+				PreprocessorDefinitions="WIN32;_DEBUG"
 				RuntimeLibrary="3"
 				UsePrecompiledHeader="2"
 				WarningLevel="3"
-				DebugInformationFormat="4"
+				DebugInformationFormat="3"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -60,9 +61,11 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				AdditionalDependencies="StudentRecord CSVInputFileReader StudentRecordCsvConverter"
 				LinkIncremental="2"
+				AdditionalLibraryDirectories="&quot;$(SolutionDir)grade-scores\$(ConfigurationName)&quot;"
 				GenerateDebugInformation="true"
-				SubSystem="1"
+				AssemblyDebug="1"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -85,14 +88,16 @@
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
+				CommandLine="if exist app.config copy app.config &quot;$(OutDir)\app.config&quot;"
 			/>
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
 			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
 			IntermediateDirectory="$(ConfigurationName)"
-			ConfigurationType="1"
+			ConfigurationType="2"
 			CharacterSet="1"
+			ManagedExtensions="1"
 			WholeProgramOptimization="1"
 			>
 			<Tool
@@ -112,11 +117,9 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				Optimization="2"
-				EnableIntrinsicFunctions="true"
-				PreprocessorDefinitions="WIN32;NDEBUG;_CONSOLE"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)grade-scores&quot;"
+				PreprocessorDefinitions="WIN32;NDEBUG"
 				RuntimeLibrary="2"
-				EnableFunctionLevelLinking="true"
 				UsePrecompiledHeader="2"
 				WarningLevel="3"
 				DebugInformationFormat="3"
@@ -132,11 +135,10 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				AdditionalDependencies="StudentRecord StdAfx"
 				LinkIncremental="1"
+				AdditionalLibraryDirectories="&quot;$(SolutionDir)grade-scores\$(ConfigurationName)&quot;"
 				GenerateDebugInformation="true"
-				SubSystem="1"
-				OptimizeReferences="2"
-				EnableCOMDATFolding="2"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -159,10 +161,31 @@
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
+				CommandLine="if exist app.config copy app.config &quot;$(OutDir)\app.config&quot;"
 			/>
 		</Configuration>
 	</Configurations>
 	<References>
+		<AssemblyReference
+			RelativePath="System.dll"
+			AssemblyName="System, Version=2.0.0.0, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL"
+			MinFrameworkVersion="131072"
+		/>
+		<AssemblyReference
+			RelativePath="System.Data.dll"
+			AssemblyName="System.Data, Version=2.0.0.0, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86"
+			MinFrameworkVersion="131072"
+		/>
+		<AssemblyReference
+			RelativePath="System.XML.dll"
+			AssemblyName="System.Xml, Version=2.0.0.0, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL"
+			MinFrameworkVersion="131072"
+		/>
+		<AssemblyReference
+			RelativePath="Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll"
+			AssemblyName="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=9.0.0.0, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
+			MinFrameworkVersion="131072"
+		/>
 	</References>
 	<Files>
 		<Filter
@@ -171,31 +194,7 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
-				RelativePath=".\Application.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\CSVInputFileReader.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\CSVOutputFileWriter.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\CustomStudentRecordSorter.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\Main.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\RecordSet.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\RecordSetWriter.cpp"
+				RelativePath=".\AssemblyInfo.cpp"
 				>
 			</File>
 			<File
@@ -219,15 +218,15 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath=".\StudentRecord.cpp"
+				RelativePath=".\UnitTestCSVInputFileReader.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\StudentRecordCsvConverter.cpp"
+				RelativePath=".\UnitTestStudentRecord.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\StudentRecordReader.cpp"
+				RelativePath=".\UnitTestStudentRecordCsvConverter.cpp"
 				>
 			</File>
 		</Filter>
@@ -237,79 +236,11 @@
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
 			<File
-				RelativePath=".\Application.h"
-				>
-			</File>
-			<File
-				RelativePath=".\CSVInputFileReader.h"
-				>
-			</File>
-			<File
-				RelativePath=".\CSVOutputFileWriter.h"
-				>
-			</File>
-			<File
-				RelativePath=".\CustomStudentRecordSorter.h"
-				>
-			</File>
-			<File
-				RelativePath=".\DebugPrint.h"
-				>
-			</File>
-			<File
-				RelativePath=".\InputFileReader.h"
-				>
-			</File>
-			<File
-				RelativePath=".\InputFileReaderCallback.h"
-				>
-			</File>
-			<File
-				RelativePath=".\OutputWriter.h"
-				>
-			</File>
-			<File
-				RelativePath=".\Record.h"
-				>
-			</File>
-			<File
-				RelativePath=".\RecordConverter.h"
-				>
-			</File>
-			<File
-				RelativePath=".\RecordReader.h"
-				>
-			</File>
-			<File
-				RelativePath=".\RecordSet.h"
-				>
-			</File>
-			<File
-				RelativePath=".\RecordSetWriter.h"
-				>
-			</File>
-			<File
-				RelativePath=".\RecordSorter.h"
+				RelativePath=".\resource.h"
 				>
 			</File>
 			<File
 				RelativePath=".\stdafx.h"
-				>
-			</File>
-			<File
-				RelativePath=".\StudentRecord.h"
-				>
-			</File>
-			<File
-				RelativePath=".\StudentRecordCsvConverter.h"
-				>
-			</File>
-			<File
-				RelativePath=".\StudentRecordReader.h"
-				>
-			</File>
-			<File
-				RelativePath=".\targetver.h"
 				>
 			</File>
 		</Filter>
@@ -318,13 +249,17 @@
 			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav"
 			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}"
 			>
+			<File
+				RelativePath=".\app.ico"
+				>
+			</File>
+			<File
+				RelativePath=".\app.rc"
+				>
+			</File>
 		</Filter>
 		<File
-			RelativePath="..\appveyor.yml"
-			>
-		</File>
-		<File
-			RelativePath=".\ReadMe.txt"
+			RelativePath=".\AuthoringTests.txt"
 			>
 		</File>
 	</Files>

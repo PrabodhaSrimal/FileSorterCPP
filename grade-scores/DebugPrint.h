@@ -4,16 +4,11 @@
 #include <string>
 #include <stdio.h>
 
-//// Debug log macros 
-//#ifndef NDEBUG
-//#define DEBUG_LOG(exp) do {\
-//	std::cout << exp << std::endl;\
-//	} while(0);
-//#else
-//#define DEBUG_LOG(exp)
-//#endif
-
-
+/**
+ * Simple console debug logging class with stream support
+ * Use:
+ *	DEBUG_LOG << "log message " << with_params << "." ;
+ */
 class DebugLog
 {
 public:
@@ -44,28 +39,28 @@ inline DebugLog::~DebugLog()
     Print(ossOut.str());
 }
 
+// Write to console only in Debug Mode
 inline void DebugLog::Print(const std::string& _log)
 {
+#ifndef NDEBUG
 	fprintf(pStream, "%s", _log.c_str());
 	fflush(pStream);
+#endif
 }
 
+// log to stdout
 inline std::ostringstream& DebugLog::Out()
 {
 	pStream = stdout;
 	return ossOut;
 }
 
+// log to stderror
 inline std::ostringstream& DebugLog::Error()
 {
 	pStream = stderr;
 	return ossOut;
 }
 
-
-// Debug log macros 
-#ifndef NDEBUG
 #define DEBUG_LOG DebugLog().Out()
-#else
-#define DEBUG_LOG
-#endif
+#define ERROR_LOG DebugLog().Error()

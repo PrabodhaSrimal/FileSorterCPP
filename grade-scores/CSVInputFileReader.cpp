@@ -22,8 +22,11 @@ void CSVInputFileReader::ReadFile(InputFileReaderCallback * _pCallback)
 	std::ifstream ifsCsvFile(s_FilePath.c_str());
 	if(!ifsCsvFile.is_open())
 	{
-		DEBUG_LOG << "File " << s_FilePath << " not found!";
-		return;	
+		std::stringstream ss;
+		ss << "File " << s_FilePath << " not found!";
+		DEBUG_LOG << ss.str();
+
+		throw std::exception(ss.str().c_str());
 	}
 
 	_pCallback->OnBOF(s_FilePath);

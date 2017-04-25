@@ -15,45 +15,27 @@ RecordSet::~RecordSet(void)
 
 void RecordSet::AddRecord(Record* _pRecord)
 {
-	lst_Records.push_back(_pRecord);
+	vec_Records.push_back(_pRecord);
 }
 
 RecordSet::Records::iterator RecordSet::Begin()
 {
-	return lst_Records.begin();
+	return vec_Records.begin();
 }
 
 RecordSet::Records::iterator RecordSet::End()
 {
-	return lst_Records.end();
+	return vec_Records.end();
 }
 
-void RecordSet::Print()
+void RecordSet::Print(std::stringstream & _ssBuf)
 {
-	for(Records::iterator ite = lst_Records.begin();
-		ite != lst_Records.end();
+	for(Records::iterator ite = vec_Records.begin();
+		ite != vec_Records.end();
 		ite++)
 	{
-		(*ite)->Print();
+		(*ite)->Print(_ssBuf);
+		_ssBuf << std::endl;
 	}
 }
 
-//void RecordSet::Read(InputFileReader * _pReader)
-//{
-//	Record * pRec = _pReader->ReadRecord();
-//	while(pRec)
-//	{
-//		lst_Records.push_back(pRec);
-//		pRec = _pReader->ReadRecord();
-//	}
-//}
-//
-//void RecordSet::Write(OutoutFileWriter * _pWriter)
-//{
-//	_pWriter->Write(this);
-//}
-//
-//void RecordSet::Sort(RecordSorter * _pSorter)
-//{
-//	std::sort(lst_Records.begin(), lst_Records.end(), _pSorter->operator ());
-//}

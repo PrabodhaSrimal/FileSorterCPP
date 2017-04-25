@@ -3,6 +3,9 @@
 #include "stdafx.h"
 #include "InputFileReaderCallback.h"
 
+/**
+ * Read given file and generate data structure using Builder design pattern
+ */
 class InputFileReader
 {
 public:

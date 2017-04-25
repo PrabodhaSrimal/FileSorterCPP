@@ -1,6 +1,9 @@
 #pragma once
 #include "recordconverter.h"
 
+/**
+ * Convert given StudentRecord to a string representation
+ */
 class StudentRecordCsvConverter : public RecordConverter
 {
 public:

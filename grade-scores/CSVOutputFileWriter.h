@@ -2,6 +2,9 @@
 #include "outputwriter.h"
 #include <string>
 
+/**
+ * Write given RecordSet into CSV file  
+ */
 class CSVOutputFileWriter : public OutputWriter
 {
 public:
